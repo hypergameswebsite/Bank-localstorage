@@ -25,9 +25,19 @@
           localStorage.setItem("money", new_balance);
           console.log("Operation executed sucessfully, your new balance is " + new_balance);
         } else {
-          console.log("Invalid input, please try again")
+          console.log("Invalid input, please try again");
         }
      }
+  }
+</script>
+<script>
+  function makeAccount() {
+    let user = prompt("What would you like your username to be?  ");
+    localStorage.setItem("user", JSON.stringify(user));
+    let passw = prompt("What would you like your password to be?  ");
+    localStorage.setItem("passw", JSON.stringify(passw));
+    let money = prompt("How much money do you have?  ");
+    localStorage.setItem("money", JSON.stringify(money));
   }
 </script>
 <head>
