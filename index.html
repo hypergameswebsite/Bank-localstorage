@@ -10,22 +10,22 @@
     let username = prompt("Username:  ");
     let password = prompt("Password:  ");
     if (username === user && password === passw) {
-        console.log("Welcome, " + fName + " " + lName);
+        alert("Welcome, " + fName + " " + lName);
         let option = prompt("What do you want to do? View account balance, Add money, Take away money.").toLowerCase();
         if (option === "view account balance") {
-          console.log("Your account balance is: " + money);
+          alert("Your account balance is: " + money);
         } else if (option === "add money") {
           let amount_add = Number(prompt("How mutch:  "));
           let new_balance = amount_add + money;
           localStorage.setItem("money", JSON.stringify(new_balance));
-          console.log("Operation executed sucessfully, your new balance is: " + new_balance);
+          alert("Operation executed sucessfully, your new balance is: " + new_balance);
         } else if (option === "take away money") {
           let amount_take = Number(prompt("How mutch:  "));
           let new_balance = money - amount_take;
           localStorage.setItem("money", JSON.stringify(new_balance));
-          console.log("Operation executed sucessfully, your new balance is " + new_balance);
+          alert("Operation executed sucessfully, your new balance is " + new_balance);
         } else {
-          console.log("Invalid input, please try again");
+          alert("Invalid input, please try again");
         }
      }
   }
@@ -42,7 +42,7 @@
     localStorage.setItem("fName", JSON.stringify(fname));
     let lname = prompt("What is your last name?  ");
     localStorage.setItem("lName", JSON.stringify(lname));
-    console.log("Account creates sucessfully, revisit page to log in")
+   alert("Account creates sucessfully, revisit page to log in")
   }
 </script>
 <head>
