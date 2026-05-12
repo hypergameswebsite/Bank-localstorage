@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<script>
+  function login() {
+    localStorage.getItem("user", user);
+    localStorage.getItem("passw", passw);
+    localStorage.getitem("money", money);
+    localStorage.getItem("fName", fName);
+    localStorage.getItem("lName", lName);
+    let username = prompt("Username:  ");
+    let password = prompt("Password:  ");
+    if (username === user && password === passw) {
+        console.log("Welcome, " + fName + " " + lName);
+        let option = toLowerCase(prompt("What do you want to do? View account balance, Add money, Take away money."));
+        if (option === "view account balance") {
+          console.log("Your account balance is: " + money);
+        } else if (option === "add money") {
+          let amount_add = prompt("How mutch:  ");
+          let new_balance = amount_add + money;
+          localStorage.setItem("money", JSON.stringify(new_balance));
+          console.log("Operation executed sucessfully, your new balance is: " + new_balance);
+        } else if (option === "take away money") {
+          let amount_take = prompt("How mutch:  ");
+          let new_balance = money - amount_take;
+          localStorage.setItem("money", new_balance);
+          console.log("Operation executed sucessfully, your new balance is " + new_balance);
+        } else {
+          console.log("Invalid input, please try again")
+        }
+     }
+  }
+</script>
+<head>
+<style>
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
+}
+</style>
+<title>Arbot</title>
+</head>
+<body>
+<div class="myDiv">
+  <h1><b>Arbot</b></h1>
+</div>
+</body>
+</html>
