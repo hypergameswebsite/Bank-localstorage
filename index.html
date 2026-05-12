@@ -45,6 +45,12 @@
    alert("Account creates sucessfully, revisit page to log in")
   }
 </script>
+<script>
+  function deleteAccount() {
+    localStorage.clear("user");
+    localStorage.clear("passw");
+  }
+</script>
 <head>
 <style>
 .myDiv {
@@ -60,6 +66,7 @@
   <h1><b>Options</b></h1>
   <button onclick="login()">Login to localy saved account</button>
   <button onclick="makeAccount()">Create Account</button>
+  <button onclick=deleteAccount()">Delete Account</button>
 </div>
 </body>
 </html>
